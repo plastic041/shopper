@@ -19,12 +19,13 @@ export default async function Page() {
       <h1 className="font-bold text-4xl">전체 상품</h1>
       <div className="grid grid-cols-4 gap-x-4 gap-y-8">
         {product.map((product) => (
-          <div className="basis-32" key={product.id}>
+          <div key={product.id}>
             <div className="flex flex-col gap-2">
               <img
                 src={product.image}
                 alt={product.title}
                 className="aspect-square object-contain"
+                loading="lazy"
               />
               <span>{product.title}</span>
               <span className="tabular-nums">${product.price}</span>
